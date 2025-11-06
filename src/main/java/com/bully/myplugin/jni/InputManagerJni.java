@@ -81,6 +81,9 @@ public class InputManagerJni {
     }
 
     public native void any2Chinese();
+
+    public native void any2Japanese();
+
     /**
      * 转换为英文输入法
      */
@@ -109,6 +112,13 @@ public class InputManagerJni {
         status=0;
         any2Chinese();
         System.out.println("toChinese");
+    }
+
+    public void any2Japanese_1(){
+        if (!doTrans) return;
+        status=0;
+        any2Japanese();
+        System.out.println("toJapanese");
     }
 
     public void any2English_1() {
