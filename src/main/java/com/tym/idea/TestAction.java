@@ -1,6 +1,5 @@
-package com.bully.myplugin;
+package com.tym.idea;
 
-import com.bully.myplugin.jni.InputManagerJni;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 

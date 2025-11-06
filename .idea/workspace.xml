@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e93aa521-f3cb-467f-85d5-e042641f3dbf" name="变更" comment="更新README.md" />
+    <list default="true" id="e93aa521-f3cb-467f-85d5-e042641f3dbf" name="变更" comment="add japanese">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/JudgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/JudgeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/MyTypedHHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/MyTypedHHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/TestAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/jni/InputManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/jni/InputManagerJni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManagerJni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/jni/InputManagerJniTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManagerJniTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/jni/com_bully_myplugin_jni_InputManagerJni.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/listener/MyProjectManagerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/MyProjectManagerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/listener/PfcCaretListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/PfcCaretListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/listener/TransChAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransChAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bully/myplugin/listener/TransEnAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransEnAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762437862402</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add japanese">
+      <option name="closed" value="true" />
+      <created>1762438351738</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762438351738</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +322,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="老夫聊发少年狂" />
     <MESSAGE value="更新README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新README.md" />
+    <MESSAGE value="add japanese" />
+    <option name="LAST_COMMIT_MESSAGE" value="add japanese" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/myplugin$Run_Plugin.ic" NAME="Run Plugin 覆盖结果" MODIFIED="1660401839208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

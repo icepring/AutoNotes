@@ -1,4 +1,4 @@
-package com.bully.myplugin.jni;
+package com.tym.idea.jni;
 
 
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.bully.myplugin;
+package com.tym.idea;
 
 import com.intellij.codeInsight.editorActions.TypedHandlerDelegate;
 import com.intellij.ide.highlighter.JavaFileType;

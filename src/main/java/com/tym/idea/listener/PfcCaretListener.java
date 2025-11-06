@@ -1,6 +1,6 @@
-package com.bully.myplugin.listener;
+package com.tym.idea.listener;
 
-import com.bully.myplugin.Process;
+import com.tym.idea.Process;
 import com.intellij.openapi.editor.event.CaretEvent;
 import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.editor.event.DocumentEvent;

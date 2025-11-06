@@ -1,7 +1,7 @@
-package com.bully.myplugin;
+package com.tym.idea;
 
-import com.bully.myplugin.jni.InputManagerJni;
-import com.bully.myplugin.listener.PfcCaretListener;
+import com.tym.idea.jni.InputManagerJni;
+import com.tym.idea.listener.PfcCaretListener;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.CaretModel;

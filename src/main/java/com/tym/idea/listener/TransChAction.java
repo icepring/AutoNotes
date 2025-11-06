@@ -1,6 +1,6 @@
-package com.bully.myplugin.listener;
+package com.tym.idea.listener;
 
-import com.bully.myplugin.jni.InputManagerJni;
+import com.tym.idea.jni.InputManagerJni;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import org.jetbrains.annotations.NotNull;

@@ -1,15 +1,12 @@
-package com.bully.myplugin.listener;
+package com.tym.idea.listener;
 
-import com.bully.myplugin.jni.InputManagerJni;
+import com.tym.idea.jni.InputManagerJni;
 import com.intellij.openapi.editor.EditorFactory;
-import com.intellij.openapi.editor.EditorGutterAction;
 import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.editor.event.DocumentListener;
-import com.intellij.openapi.editor.event.EditorEventListener;
 import com.intellij.openapi.editor.event.EditorEventMulticaster;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
-import com.intellij.util.messages.Topic;
 import org.jetbrains.annotations.NotNull;
 
 

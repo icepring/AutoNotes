@@ -1,6 +1,5 @@
-package com.bully.myplugin;
+package com.tym.idea;
 
-import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.io.IOException;

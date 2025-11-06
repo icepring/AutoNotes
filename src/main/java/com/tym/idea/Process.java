@@ -1,6 +1,6 @@
-package com.bully.myplugin;
+package com.tym.idea;
 
-import com.bully.myplugin.jni.InputManagerJni;
+import com.tym.idea.jni.InputManagerJni;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;

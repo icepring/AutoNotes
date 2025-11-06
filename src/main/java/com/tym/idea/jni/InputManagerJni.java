@@ -1,4 +1,4 @@
-package com.bully.myplugin.jni;
+package com.tym.idea.jni;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -8,16 +8,11 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.StringTokenizer;
 
-/**
- * @author LIXIN
- * @description Í¨¹ıjni µ÷ÓÃwin32 api ÊµÏÖÊäÈë·¨ÇĞ»»
- * @date 2022/8/11 13:11
- */
 public class InputManagerJni {
     //1 -english
     public static int status=1;
     public static int status0=1;
-    //ÊÇ·ñ½øĞĞ×ª»»
+    //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½
     public static boolean doTrans=true;
     private static volatile InputManagerJni inputManagerJni = new InputManagerJni();
     public static Robot robot;
@@ -84,29 +79,15 @@ public class InputManagerJni {
 
     public native void any2Japanese();
 
-    /**
-     * ×ª»»ÎªÓ¢ÎÄÊäÈë·¨
-     */
+
     public native void any2English();
 
-    /**
-     * µ±Ç°ÊäÈë·¨ 0-ÖĞÎÄ,1-Ó¢ÎÄ,2-ÆäËû
-     */
     public native int state();
 
-    /**
-     * »ñÈ¡ÊäÈë·¨ÁĞ±í-±£Áô
-     */
     public native String list();
 
-    /**
-     * ÒÆ³ıÊäÈë·¨ 0-ÖĞÎÄ,1-Ó¢ÎÄ,-±£Áô
-     */
     public native String remove(int flag);
 
-    /**
-     * ×ª»»ÎªÖĞÎÄÊäÈë·¨
-     */
     public void any2Chinese_1(){
         if (!doTrans) return;
         status=0;
