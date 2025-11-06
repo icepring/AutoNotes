@@ -8,7 +8,6 @@ public class TransEnAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        System.out.println("¿ì½Ý¼üÇÐ»»ÎªÓ¢ÎÄ");
         InputManagerJni.getSingleton().any2English_1();
     }
 }

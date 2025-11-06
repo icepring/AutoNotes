@@ -35,7 +35,7 @@ public class Process {
         if (mPsiFile == null) return;
         init(mInputChar, mEditor, mPsiFile);
         if (mPsiFile == null || mPsiElement == null) return;
-        //Ìí¼Ó×¢ÊÍ
+        //æ·»åŠ æ³¨é‡Š
         if (!isNeedTrans()) {
             return;
         }
@@ -64,14 +64,14 @@ public class Process {
         processed = false;
         InputManagerJni.doTrans = true;
         mInputChar=inputChar;
-        //³õÊ¼»¯³ÉÔ±
+        //åˆå§‹åŒ–æˆå‘˜
         init(inputChar, editor, psiFile);
         boolean containChinese = Util.isContainChinese(inputChar);
         if (containChinese) {
             InputManagerJni.doTrans = false;
             InputManagerJni.status0 = InputManagerJni.status;
             InputManagerJni.status = 0;
-            //Ìí¼ÓĞĞ×¢ÊÍ
+            //æ·»åŠ è¡Œæ³¨é‡Š
             if (!(mPsiElement instanceof PsiIdentifier)) {
                 mPsiElement = psiFile.findElementAt(offset - 1);
                 if (mPsiElement == null) {
@@ -127,7 +127,7 @@ public class Process {
         if (mPsiElement == null) {
             return false;
         }
-        //ÊÇ±í´ïÊ½
+        //æ˜¯è¡¨è¾¾å¼
         if (mPsiElement.getContext() instanceof PsiLiteralExpressionImpl) {
             return false;
         }
@@ -145,7 +145,7 @@ public class Process {
         return line.replaceAll("\t", " ").trim();
     }
 
-    //ÅĞ¶Ïµ±Ç°ÉÏÏÂÎÄÊÇ·ñÊôÓÚĞĞ×¢ÊÍ»·¾³
+    //åˆ¤æ–­å½“å‰ä¸Šä¸‹æ–‡æ˜¯å¦å±äºè¡Œæ³¨é‡Šç¯å¢ƒ
     private static boolean isLineEndCommented() {
         String lineText = getLineText();
         if (lineText.isBlank() || mDocument.getLineStartOffset(lineNumber) == offset) {
@@ -168,7 +168,7 @@ public class Process {
         return false;
     }
 
-    //ÊÇ·ñÊÇ¶àĞĞ×¢ÊÍ£¬°üÀ¨doc×¢ÊÍ
+    //æ˜¯å¦æ˜¯å¤šè¡Œæ³¨é‡Šï¼ŒåŒ…æ‹¬docæ³¨é‡Š
     private static boolean isMutiLineComment() {
         if (getLineText().startsWith("*/")) {
             return false;
@@ -197,9 +197,9 @@ public class Process {
         }
         return false;
     }
-    //ÊÇ·ñÊÇĞÂĞĞ
+    //æ˜¯å¦æ˜¯æ–°è¡Œ
     private static boolean isNewLine(CaretEvent event) {
-        int oldLine = event.getOldPosition().line;//²»¹ÜÕâÑùÊÇµÄ
+        int oldLine = event.getOldPosition().line;//ä¸ç®¡è¿™æ ·æ˜¯çš„
         int newLine = event.getNewPosition().line;
         return oldLine != newLine;
     }

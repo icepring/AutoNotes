@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class Util {
     static Properties properties = null;
 
-    // ´´½¨²¢¼ÓÔØÅäÖÃÎÄ¼ş
+    // åˆ›å»ºå¹¶åŠ è½½é…ç½®æ–‡ä»¶
     public static void loadProperties() {
         properties = new Properties();
         InputStream in = Util.class.getClassLoader().getResourceAsStream("settings.properties");
@@ -47,13 +47,13 @@ public class Util {
     }
 
     public static boolean isContainChinese(String str)  {
-        Pattern p = Pattern.compile("[\u4E00-\u9FA5|\\£¡|\\£¬|\\¡£|\\¡¢|\\£¨|\\£©|\\¡¶|\\¡·|\\¡°|\\¡±|\\£¿|\\£º|\\£»|\\¡¾|\\¡¿]");
+        Pattern p = Pattern.compile("[\u4E00-\u9FA5|\\ï¼|\\ï¼Œ|\\ã€‚|\\ã€|\\ï¼ˆ|\\ï¼‰|\\ã€Š|\\ã€‹|\\â€œ|\\â€|\\ï¼Ÿ|\\ï¼š|\\ï¼›|\\ã€|\\ã€‘]");
         Matcher m = p.matcher(str);
         return m.find();
     }
 
     @Test
     public void test() {
-        System.out.println(isContainChinese("sdrg¡¢"+""));
+        System.out.println(isContainChinese("sdrgã€"+""));
     }
 }

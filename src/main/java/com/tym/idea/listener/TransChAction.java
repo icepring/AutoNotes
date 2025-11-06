@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 public class TransChAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        System.out.println("快捷键切换为中文");
         InputManagerJni.getSingleton().any2Chinese_1();
     }
 }

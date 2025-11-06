@@ -23,11 +23,11 @@ public class JudgeService {
     static Editor mEditor;
     static PsiFile mPsiFile;
     static int noteModeNormal = 0;
-    //doc ×¢ÊÍ
+    //doc æ³¨é‡Š
     static int noteModeDoc = 1;
     static int offset, oldOffset;
     static int currentCaretIndex = -1;
-    //ÊÇ·ñÊÇ¿Õ°×ĞĞ
+    //æ˜¯å¦æ˜¯ç©ºç™½è¡Œ
     static boolean isWitheLine = false;
     static String newFragment;
     static int lineA, lineB, moveLength;
@@ -42,18 +42,18 @@ public class JudgeService {
         Document document = event.getDocument();
         isWitheLine = DocumentUtil.isLineEmpty(document, document.getLineNumber(event.getOffset()));
         oldOffset = event.getOffset() - event.getNewFragment().length();
-        //²åÈëÖ®Ç°µÄĞĞºÅ
+        //æ’å…¥ä¹‹å‰çš„è¡Œå·
         lineA = document.getLineNumber(oldOffset);
     }
 
-    //ÎÄµµÀàÈİ·¢Éú¸Ä±ä
+    //æ–‡æ¡£ç±»å®¹å‘ç”Ÿæ”¹å˜
     public static void beforeJudge(char c, Project project, Editor editor, FileType fileType) {
         mProject = project;
         mEditor = editor;
         Document document = editor.getDocument();
         oldOffset = editor.getCaretModel().getOffset();
         isWitheLine = DocumentUtil.isLineEmpty(document, document.getLineNumber(oldOffset));
-        //²åÈëÖ®Ç°µÄĞĞºÅ
+        //æ’å…¥ä¹‹å‰çš„è¡Œå·
         lineA = document.getLineNumber(oldOffset);
     }
 
@@ -62,17 +62,17 @@ public class JudgeService {
         mProject = project;
         newFragment = c + "";
         mPsiFile = file;
-        //Ã»ÓĞ×¢ÊÍµÄÖĞÎÄ³öÏÖÁËĞèÒª×öĞ©´¦Àí
+        //æ²¡æœ‰æ³¨é‡Šçš„ä¸­æ–‡å‡ºç°äº†éœ€è¦åšäº›å¤„ç†
         Document document = editor.getDocument();
-        //µ±Ç°ÊäÈë×Ö·û¾àÀëÎÄµµÍ·²¿µÄ×Ö·ûÊıÄ¿
+        //å½“å‰è¾“å…¥å­—ç¬¦è·ç¦»æ–‡æ¡£å¤´éƒ¨çš„å­—ç¬¦æ•°ç›®
         offset = editor.getCaretModel().getOffset();
         lineB = document.getLineNumber(offset);
         moveLength = offset - oldOffset;
         currentCaretIndex = offset;
-        System.out.println("noted£º" + isNoted());
+        System.out.println("notedï¼š" + isNoted());
         if (isBlockNote()) {
             if (blockRange!=null&&blockRange.containsOffset(offset)&&activeTimes1==0) {
-//                ¹â±êÔÚ×¢ÊÍÄÚ
+//                å…‰æ ‡åœ¨æ³¨é‡Šå†…
                 InputManagerJni.getSingleton().any2Chinese_1();
                 activeTimes1++;
             }
@@ -85,20 +85,20 @@ public class JudgeService {
             return;
         }
 
-//       Ã»ÓĞ±»×¢ÊÍ ÇÒÊäÈëµÄÊÇÓ¢ÎÄ ²»¹Ü
+//       æ²¡æœ‰è¢«æ³¨é‡Š ä¸”è¾“å…¥çš„æ˜¯è‹±æ–‡ ä¸ç®¡
         if (!Util.isContainChinese(newFragment)) {
             return;
         }
-        System.out.println("ÊäÈëµÄÊÇÖĞÎÄ");
-        //»ñÈ¡µ±Ç°¹â±êÏÂÇ°Ãæ2×Ö·û°üÀ¨¸Õ¸ÕÊäÈëµÄ×Ö·û
+        System.out.println("è¾“å…¥çš„æ˜¯ä¸­æ–‡");
+        //è·å–å½“å‰å…‰æ ‡ä¸‹å‰é¢2å­—ç¬¦åŒ…æ‹¬åˆšåˆšè¾“å…¥çš„å­—ç¬¦
 //        int firstNonSpaceCharOffset = DocumentUtil.getFirstNonSpaceCharOffset(document, lineNumber);
 //        String pre2str = document.getText(TextRange.from(Math.max(offset - 1, firstNonSpaceCharOffset), 2));
-        //Ìí¼ÓºÏÊÊµÄ×¢ÊÍ
+        //æ·»åŠ åˆé€‚çš„æ³¨é‡Š
         addLineNotes();
 
     }
 
-    //¹â±êÎ»ÖÃ·¢Éú¸Ä±ä
+    //å…‰æ ‡ä½ç½®å‘ç”Ÿæ”¹å˜
     public static boolean isNoted() {
         return isLineNote() || isBlockNote();
     }
@@ -118,12 +118,12 @@ public class JudgeService {
         boolean lineNote = isLineNote();
         System.out.println("lineNote :" + lineNote);
         if (lineNote) {
-            //Êó±êÔÚ²»Í¬Ò»ĞĞ ²¢ÇÒ µÚÒ»´Î»»ĞĞÊ±£¬ÇĞ»»£¬ºóÃæ²»ÇĞ»»
+            //é¼ æ ‡åœ¨ä¸åŒä¸€è¡Œ å¹¶ä¸” ç¬¬ä¸€æ¬¡æ¢è¡Œæ—¶ï¼Œåˆ‡æ¢ï¼Œåé¢ä¸åˆ‡æ¢
             if (lastLine != lineNumber || activeTimes == 0) {
                 InputManagerJni.getSingleton().any2Chinese_1();
                 activeTimes++;
             }
-            //µ±»»ĞĞºóÓĞÖØÖÃ
+            //å½“æ¢è¡Œåæœ‰é‡ç½®
             if (lastLine != lineNumber) {
                 activeTimes = 0;
             }
@@ -134,8 +134,8 @@ public class JudgeService {
     }
 
     /**
-     * Ìí¼ÓĞĞ×¢ÊÍ
-     * Èç¹ûÔÙ¿Õ°×ĞĞÊäÈëÖĞÎÄ»á×Ô¶¯ÔÙĞĞÊ×Ìí¼Ó×¢ÊÍ
+     * æ·»åŠ è¡Œæ³¨é‡Š
+     * å¦‚æœå†ç©ºç™½è¡Œè¾“å…¥ä¸­æ–‡ä¼šè‡ªåŠ¨å†è¡Œé¦–æ·»åŠ æ³¨é‡Š
      */
     private static void addLineNotes() {
         Boolean enableLineNote = Util.geBooleanSetting("enableLineNote");
@@ -150,7 +150,7 @@ public class JudgeService {
         int lineNumber = document.getLineNumber(currentCaretIndex);
         int lineStartOffset = document.getLineStartOffset(lineNumber);
         String lineStr = document.getText(TextRange.from(lineStartOffset, currentCaretIndex - lineStartOffset));
-        // °üº¬*/// Ò²ÊÇ×¢ÊÍ
+        // åŒ…å«*/// ä¹Ÿæ˜¯æ³¨é‡Š
         String[] split1 = lineStr.split("\\*///");
         if (split1.length > 1) {
             return true;
@@ -170,7 +170,7 @@ public class JudgeService {
             return false;
         }
         if ((context instanceof PsiComment)) {
-             blockRange = context.getTextRangeInParent();
+            blockRange = context.getTextRangeInParent();
             System.out.println(((PsiComment) context).getTokenType());
             System.out.println(blockRange);
             return true;
@@ -180,7 +180,7 @@ public class JudgeService {
 
     private static void noteLineText() {
         Document document = mEditor.getDocument();
-        //×¢ÊÍÄ£Ê½
+        //æ³¨é‡Šæ¨¡å¼
         int noteMode = Util.getIntegerSetting("noteMode");
         int lineStartOffset = getStartIndex();
         if (noteMode == noteModeNormal) {
@@ -198,20 +198,20 @@ public class JudgeService {
 
     private static int getStartIndex() {
         Document document = mEditor.getDocument();
-        if (isWitheLine) {//¿Õ°×ĞĞÖ±½ÓÔÚÍ·²¿
+        if (isWitheLine) {//ç©ºç™½è¡Œç›´æ¥åœ¨å¤´éƒ¨
             return document.getLineStartOffset(lineB);
-        } else {//²»ÊÇ¿Õ°×ĞĞÒª×ÛºÏÅĞ¶Ï
-            //Ò»ĞĞÎÄ±¾
+        } else {//ä¸æ˜¯ç©ºç™½è¡Œè¦ç»¼åˆåˆ¤æ–­
+            //ä¸€è¡Œæ–‡æœ¬
             String lineStr = document.getText(DocumentUtil.getLineTextRange(document, lineB));
         }
         return 0;
     }
 
 //    /**
-//     * ×¢ÊÍÒ»¶ÎÎÄ×Ö
+//     * æ³¨é‡Šä¸€æ®µæ–‡å­—
 //     */
 //    private static void noteBlockText(Document document) {
-//        //×¢ÊÍÄ£Ê½
+//        //æ³¨é‡Šæ¨¡å¼
 //        int noteMode = Util.getIntegerSetting("noteMode");
 //        if (noteMode == noteModeNormal) {
 //            for (int i = lineA; i <= lineB; i++) {
@@ -237,7 +237,7 @@ public class JudgeService {
     }
 
 //    private static boolean isBlockText(Document document) {
-//        //²åÈëÖ®Ç°µÄĞĞºÅ                                  ²åÈëÖ®ºóµÄĞĞºÅ
+//        //æ’å…¥ä¹‹å‰çš„è¡Œå·                                  æ’å…¥ä¹‹åçš„è¡Œå·
 //        return document.getLineNumber(offset) != document.getLineNumber(oldOffset);
 //    }
 

@@ -8,6 +8,6 @@ public class TestAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
 
-        System.out.println("test 点击");
+//        System.out.println("test 点击");
     }
 }

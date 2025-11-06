@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e93aa521-f3cb-467f-85d5-e042641f3dbf" name="变更" comment="add japanese">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/JudgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/JudgeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/TestAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransChAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransChAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransEnAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransEnAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/InputManager_64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InputManager_64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,33 +40,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="myplugin" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="myplugin" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="myplugin" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="intellij" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="myplugin" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="myplugin" type="f1a62948:ProjectNode" />
-                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -103,7 +87,7 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/AndroidS/AutoNotes/src/main/java/com/tym/idea/jni",
+    "last_opened_file_path": "D:/AndroidS/AutoNotes/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,16 +103,40 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidS\AutoNotes\src\main\resources" />
       <recent name="D:\AndroidS\AutoNotes\src\main\java\com\tym\idea\jni" />
       <recent name="D:\AndroidS\AutoNotes" />
       <recent name="D:\AndroidS\AutoNotes\gradle" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AndroidS\AutoNotes\src\main\java\com\tym\idea\jni" />
       <recent name="C:\Users\LIXIN\IdeaProjects\myplugin" />
       <recent name="C:\Users\LIXIN\IdeaProjects\myplugin\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.myplugin [buildPlugin]">
+  <component name="RunManager" selected="Gradle.AutoNotes [assemble]">
+    <configuration name="AutoNotes [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="myplugin [buildPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -210,6 +218,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AutoNotes [assemble]" />
         <item itemvalue="Gradle.myplugin [buildPlugin]" />
         <item itemvalue="Gradle.myplugin [jar]" />
         <item itemvalue="Gradle.myplugin [clean]" />
@@ -284,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762439912492</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add japanese">
+      <option name="closed" value="true" />
+      <created>1762442324519</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762442324519</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
