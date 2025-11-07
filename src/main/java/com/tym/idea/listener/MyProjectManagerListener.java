@@ -23,7 +23,6 @@ public class MyProjectManagerListener implements ProjectActivity, Disposable {
     @Nullable
     @Override
     public Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
-        Util.notify("init");
         EditorFactory instance = EditorFactory.getInstance();
         EditorEventMulticaster eventMulticaster = instance.getEventMulticaster();
         eventMulticaster.addCaretListener((CaretListener) pfcCaretListener);

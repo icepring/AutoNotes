@@ -37,31 +37,22 @@ public class Process {
 //        if (processed) {
 //            return;
 //        }
-        Util.notify("caretPositionChanged");
         if (event == null) {
-            Util.notify("event == null");
             return;
         }
-        Util.notify("event ="+event);
         mEditor = event.getEditor();
         Project project = mEditor.getProject();
         if (project == null) {
-            Util.notify("project == null");
             return;
         }
-        Util.notify("project ="+project);
         PsiFile psiFile = PsiDocumentManager.getInstance(project).getPsiFile(mEditor.getDocument());
         if (psiFile == null) {
-            Util.notify("psiFile == null");
             return;
         }
-        Util.notify("psiFile ="+psiFile);
         init(mInputChar, mEditor, psiFile);
         if (mPsiFile == null || mPsiElement == null) {
-            Util.notify("mPsiElement == null");
             return;
         }
-        Util.notify("mPsiElement ="+mPsiElement);
 //        //添加注释
 //        if (!isNeedTrans()) {
 //            Util.notify("添加注释");
@@ -69,33 +60,23 @@ public class Process {
 //        }
         if (getLineText().isBlank()) {
             if (isNewLine(event)) {
-                Util.notify("isNewLine =");
                 InputManagerJni.getSingleton().any2English();
             }
         }
-        Util.notify("activeTimes ="+activeTimes);
         if (isNewLine(event)) {
             activeTimes = 0;
         }
         if (activeTimes != 0) {
-            Util.notify("activeTimes != 0");
             return;
         }
-        Util.notify("activeTimes ="+activeTimes);
-        Util.notify("isComment ="+isComment());
-        Util.notify("isComment = ok");
         if (isComment()) {
-            Util.notify("getLanguage = "+AppSettingsState.Companion.getInstance().getLanguage());
             if(AppSettingsState.Companion.getInstance().getLanguage()== AppSettingsState.LanguageOption.CHINESE){
-                Util.notify("any2Chinese_1");
                 InputManagerJni.getSingleton().any2Chinese_1();
             }else{
-                Util.notify("any2Japanese_1");
                 InputManagerJni.getSingleton().any2Japanese_1();
             }
             if (mInputChar != null) activeTimes++;
         } else {
-            Util.notify("any2English_1");
             InputManagerJni.getSingleton().any2English_1();
             if (mInputChar != null) activeTimes++;
         }

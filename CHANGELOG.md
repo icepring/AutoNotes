@@ -1,6 +1,10 @@
+## 1.0.3
+
+- [x] support japanese kannji
+
 ## 1.0.2
 
-- [x] support K3
+- [x] support japanese
 
 ## 1.0.1
 
