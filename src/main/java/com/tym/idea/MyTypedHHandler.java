@@ -6,9 +6,8 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiFile;
-import com.jetbrains.lang.dart.DartFileType;
+import com.tym.ui.AppSettingsState;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.kotlin.idea.KotlinFileType;
 
 /**
  * This is a custom {@link TypedHandlerDelegate} that handles actions activated keystrokes in the editor.
@@ -20,9 +19,11 @@ class MyTypedHandler extends TypedHandlerDelegate {
     @Override
     public @NotNull Result beforeCharTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file, @NotNull FileType fileType) {
 //        JudgeService.beforeJudge(c,project,editor,fileType);
-        if (fileType instanceof JavaFileType || fileType instanceof DartFileType || fileType instanceof KotlinFileType) {
-            Process.process(String.valueOf(c), editor, file);
-        }
+//        if(AppSettingsState.Companion.getInstance().getEnable()){
+//            if (fileType instanceof JavaFileType || fileType.toString().toLowerCase().contains("kotlin") || fileType.toString().toLowerCase().contains("dart")) {
+//                Process.process(String.valueOf(c), editor, file);
+//            }
+//        }
         return Result.CONTINUE;
     }
 

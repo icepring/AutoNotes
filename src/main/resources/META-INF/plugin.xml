@@ -15,10 +15,19 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
     <extensions defaultExtensionNs="com.intellij">
         <typedHandler implementation="com.tym.idea.MyTypedHandler"/>
+
+        <applicationService serviceImplementation="com.tym.ui.AppSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="com.tym.ui.AppSettingsConfigurable"
+                                 id="com.tym.ui.AppSettingsConfigurable"
+                                 displayName="TInputManagerSettings"/>
+
     </extensions>
+
+
     <!-- action配置，按钮展示在哪里需要在这配置 -->
     <actions>
         <action id="transEn" class="com.tym.idea.listener.TransEnAction" text="切换英文输入"

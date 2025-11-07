@@ -1,5 +1,8 @@
 package com.tym.idea;
 
+import com.intellij.ide.highlighter.JavaFileType;
+import com.intellij.psi.impl.source.tree.CompositeElement;
+import com.jetbrains.lang.dart.psi.DartDocComment;
 import com.tym.idea.jni.InputManagerJni;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Document;
@@ -13,6 +16,9 @@ import com.intellij.psi.javadoc.PsiDocComment;
 import com.intellij.psi.javadoc.PsiDocTag;
 import com.intellij.psi.javadoc.PsiDocToken;
 import com.intellij.psi.tree.IElementType;
+import com.tym.ui.AppSettingsState;
+import org.jetbrains.kotlin.kdoc.lexer.KDocToken;
+import org.jetbrains.kotlin.kdoc.psi.impl.*;
 
 public class Process {
     static Editor mEditor;
@@ -28,12 +34,16 @@ public class Process {
     static int deleteLine = -1;
 
     public static void caretPositionChanged(CaretEvent event) {
-        if (processed) {
-            return;
-        }
+//        if (processed) {
+//            return;
+//        }
+        if (event == null) return;
         mEditor = event.getEditor();
-        if (mPsiFile == null) return;
-        init(mInputChar, mEditor, mPsiFile);
+        Project project = mEditor.getProject();
+        if (project == null) return;
+        PsiFile psiFile = PsiDocumentManager.getInstance(project).getPsiFile(mEditor.getDocument());
+        if (psiFile == null) return;
+        init(mInputChar, mEditor, psiFile);
         if (mPsiFile == null || mPsiElement == null) return;
         //添加注释
         if (!isNeedTrans()) {
@@ -51,7 +61,11 @@ public class Process {
             return;
         }
         if (isComment()) {
-            InputManagerJni.getSingleton().any2Chinese_1();
+            if(AppSettingsState.Companion.getInstance().getLanguage()== AppSettingsState.LanguageOption.CHINESE){
+                InputManagerJni.getSingleton().any2Chinese_1();
+            }else{
+                InputManagerJni.getSingleton().any2Japanese_1();
+            }
             if (mInputChar != null) activeTimes++;
         } else {
             InputManagerJni.getSingleton().any2English_1();
@@ -63,7 +77,7 @@ public class Process {
     static void process(String inputChar, Editor editor, PsiFile psiFile) {
         processed = false;
         InputManagerJni.doTrans = true;
-        mInputChar=inputChar;
+        mInputChar = inputChar;
         //初始化成员
         init(inputChar, editor, psiFile);
         boolean containChinese = Util.isContainChinese(inputChar);
@@ -97,6 +111,27 @@ public class Process {
                         mDocument.insertString(startOffsetInParent, "//");
                         processed = true;
                     }
+                }
+            }
+            if (mPsiElement.getParent() != null && mPsiElement.getParent().getNextSibling() != null
+                    && mPsiElement.getParent().getNextSibling().getClass().getSimpleName().toLowerCase().contains("error")) {
+                int startOffsetInParent = mPsiElement.getTextOffset();
+                mDocument.insertString(startOffsetInParent, "//");
+                processed = true;
+                return;
+            }
+            if ( mPsiElement.toString().toLowerCase().contains("bad_char")) {
+                int startOffsetInParent = mPsiElement.getTextOffset();
+                mDocument.insertString(startOffsetInParent, "//");
+                processed = true;
+                return;
+            }
+
+            if (mPsiElement.getNextSibling() != null) {
+                if (mPsiElement.getNextSibling().getClass().getSimpleName().toLowerCase().contains("error")) {
+                    int startOffsetInParent = mPsiElement.getTextOffset();
+                    mDocument.insertString(startOffsetInParent, "//");
+                    processed = true;
                 }
             }
         } else {
@@ -186,17 +221,38 @@ public class Process {
         if (mPsiElement instanceof PsiDocToken || mPsiElement.getContext() instanceof PsiDocToken) {
             return true;
         }
+
+        if (mPsiElement instanceof KDocImpl || mPsiElement.getContext() instanceof KDocImpl) {
+            return true;
+        }
+        if (mPsiElement instanceof KDocSection || mPsiElement.getContext() instanceof KDocSection) {
+            return true;
+        }
+        if (mPsiElement instanceof KDocTag || mPsiElement.getContext() instanceof KDocTag) {
+            return true;
+        }
+        if (mPsiElement instanceof KDocToken || mPsiElement.getContext() instanceof KDocToken) {
+            return true;
+        }
+
         if (mPsiElement instanceof PsiComment) {
             IElementType tokenType = ((PsiComment) mPsiElement).getTokenType();
-            return tokenType.getDebugName().equals("C_STYLE_COMMENT");
+            return tokenType.toString().equals("C_STYLE_COMMENT") || tokenType.toString().equals("KDoc");
         }
         PsiElement context = mPsiElement.getContext();
         if (context instanceof PsiComment) {
             IElementType tokenType = ((PsiComment) context).getTokenType();
-            return tokenType.getDebugName().equals("C_STYLE_COMMENT");
+            return tokenType.toString().equals("C_STYLE_COMMENT") || tokenType.toString().equals("KDoc");
         }
+
+
+        if (getLineText().startsWith("*")) {
+            return true;
+        }
+
         return false;
     }
+
     //是否是新行
     private static boolean isNewLine(CaretEvent event) {
         int oldLine = event.getOldPosition().line;//不管这样是的

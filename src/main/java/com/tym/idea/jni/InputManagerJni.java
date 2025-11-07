@@ -12,7 +12,6 @@ public class InputManagerJni {
     //1 -english
     public static int status=1;
     public static int status0=1;
-    //�Ƿ����ת��
     public static boolean doTrans=true;
     private static volatile InputManagerJni inputManagerJni = new InputManagerJni();
     public static Robot robot;
@@ -89,7 +88,7 @@ public class InputManagerJni {
     public native String remove(int flag);
 
     public void any2Chinese_1(){
-        if (!doTrans) return;
+//        if (!doTrans) return;
         status=0;
         any2Chinese();
         System.out.println("toChinese");
@@ -103,7 +102,7 @@ public class InputManagerJni {
     }
 
     public void any2English_1() {
-        if (!doTrans) return;
+//        if (!doTrans) return;
         any2English();
         status=1;
         System.out.println("toEnglish");

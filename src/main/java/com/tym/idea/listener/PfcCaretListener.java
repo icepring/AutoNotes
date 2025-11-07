@@ -1,10 +1,12 @@
 package com.tym.idea.listener;
 
+import com.intellij.ide.highlighter.JavaFileType;
 import com.tym.idea.Process;
 import com.intellij.openapi.editor.event.CaretEvent;
 import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
+import com.tym.ui.AppSettingsState;
 import org.jetbrains.annotations.NotNull;
 
 public class PfcCaretListener implements CaretListener, DocumentListener {
@@ -12,7 +14,9 @@ public class PfcCaretListener implements CaretListener, DocumentListener {
 
     @Override
     public void caretPositionChanged(@NotNull CaretEvent event) {
-        Process.caretPositionChanged(event);
+        if(AppSettingsState.Companion.getInstance().getEnable()){
+            Process.caretPositionChanged(event);
+        }
     }
 
     @Override

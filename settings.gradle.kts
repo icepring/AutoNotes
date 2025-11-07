@@ -1,1 +1,1 @@
-rootProject.name = "myplugin"
+rootProject.name = "idealToop"

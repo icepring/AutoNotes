@@ -47,11 +47,10 @@ public class Util {
     }
 
     public static boolean isContainChinese(String str)  {
-        Pattern p = Pattern.compile("[\u4E00-\u9FA5|\\！|\\，|\\。|\\、|\\（|\\）|\\《|\\》|\\“|\\”|\\？|\\：|\\；|\\【|\\】]");
+        Pattern p = Pattern.compile("[\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF|\\！|\\，|\\。|\\、|\\（|\\）|\\《|\\》|\\“|\\”|\\？|\\：|\\；|\\【|\\】]");
         Matcher m = p.matcher(str);
         return m.find();
     }
-
     @Test
     public void test() {
         System.out.println(isContainChinese("sdrg、"+""));

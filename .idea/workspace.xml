@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e93aa521-f3cb-467f-85d5-e042641f3dbf" name="变更" comment="add japanese">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tym/ui/AppSettingComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tym/ui/AppSettingsConfigurable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tym/ui/AppSettingsState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tym/ui/Messages.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/MessagesBundle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/MessagesBundle_ja.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/MessagesBundle_zh.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages/MyBundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/JudgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/JudgeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/MyTypedHHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/MyTypedHHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/TestAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransChAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransChAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransEnAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/TransEnAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManagerJni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManagerJni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/PfcCaretListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tym/idea/listener/PfcCaretListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/InputManager_64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/InputManager_64.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
@@ -52,6 +58,7 @@
       <list>
         <option value="Action" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -87,15 +94,15 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/AndroidS/AutoNotes/src/main/resources",
+    "last_opened_file_path": "D:/AndroidS/flutter_native_splash",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.13063477",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
@@ -104,6 +111,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\AndroidS\AutoNotes\src\main\resources" />
+      <recent name="D:\AndroidS\AutoNotes\src\main\java\com\tym\ui" />
       <recent name="D:\AndroidS\AutoNotes\src\main\java\com\tym\idea\jni" />
       <recent name="D:\AndroidS\AutoNotes" />
       <recent name="D:\AndroidS\AutoNotes\gradle" />
@@ -203,19 +211,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="myplugin" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="myplugin" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.AutoNotes [assemble]" />
@@ -226,6 +221,13 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="StandaloneScriptsStorage">
+    <option name="files">
+      <set>
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
+      </set>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="e93aa521-f3cb-467f-85d5-e042641f3dbf" name="变更" comment="" />
@@ -247,6 +249,13 @@
       <workItem from="1679579630977" duration="288000" />
       <workItem from="1683810046963" duration="3119000" />
       <workItem from="1762435477762" duration="2389000" />
+      <workItem from="1762444558524" duration="251000" />
+      <workItem from="1762444859697" duration="463000" />
+      <workItem from="1762445464750" duration="1162000" />
+      <workItem from="1762446670946" duration="2417000" />
+      <workItem from="1762449373656" duration="1255000" />
+      <workItem from="1762475280424" duration="3768000" />
+      <workItem from="1762479471140" duration="10186000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1662094709036</created>
@@ -301,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762442324519</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add japanese">
+      <option name="closed" value="true" />
+      <created>1762444436341</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762444436341</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +353,20 @@
     <MESSAGE value="更新README.md" />
     <MESSAGE value="add japanese" />
     <option name="LAST_COMMIT_MESSAGE" value="add japanese" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tym/idea/jni/InputManagerJni.java</url>
+          <line>90</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/myplugin$Run_Plugin.ic" NAME="Run Plugin 覆盖结果" MODIFIED="1660401839208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
