@@ -6,6 +6,7 @@ import com.intellij.openapi.editor.event.CaretEvent;
 import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
+import com.tym.idea.Util;
 import com.tym.ui.AppSettingsState;
 import org.jetbrains.annotations.NotNull;
 

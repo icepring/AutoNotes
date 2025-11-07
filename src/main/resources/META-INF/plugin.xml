@@ -24,7 +24,9 @@
         <applicationConfigurable parentId="tools" instance="com.tym.ui.AppSettingsConfigurable"
                                  id="com.tym.ui.AppSettingsConfigurable"
                                  displayName="TInputManagerSettings"/>
-
+        <backgroundPostStartupActivity id="MyProjectManagerListener"
+                                       implementation="com.tym.idea.listener.MyProjectManagerListener"
+                                       order="last"/>
     </extensions>
 
 
@@ -41,10 +43,7 @@
 <!--            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift D"/>-->
 <!--        </action>-->
 <!--    </actions>-->
-    <applicationListeners>
-        <listener class="com.tym.idea.listener.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+
     <extensions defaultExtensionNs="org.jetbrains.kotlin">
         <supportsKotlinPluginMode supportsK2="true"/>
     </extensions>

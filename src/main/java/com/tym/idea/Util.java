@@ -1,5 +1,8 @@
 package com.tym.idea;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.notification.*;
+import com.intellij.openapi.application.ApplicationManager;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -50,6 +53,17 @@ public class Util {
         Pattern p = Pattern.compile("[\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF|\\！|\\，|\\。|\\、|\\（|\\）|\\《|\\》|\\“|\\”|\\？|\\：|\\；|\\【|\\】]");
         Matcher m = p.matcher(str);
         return m.find();
+    }
+
+
+    public static void notify(String message){
+        NotificationGroup notificationGroup = new NotificationGroup("InputManager", NotificationDisplayType.BALLOON, true);
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Notifications.Bus.notify(notificationGroup.createNotification(message, NotificationType.INFORMATION));
+            }
+        });
     }
     @Test
     public void test() {
