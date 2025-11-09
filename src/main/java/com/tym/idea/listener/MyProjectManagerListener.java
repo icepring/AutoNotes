@@ -3,6 +3,7 @@ package com.tym.idea.listener;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.VetoableProjectManagerListener;
 import com.intellij.openapi.startup.ProjectActivity;
+import com.intellij.openapi.wm.WindowManager;
 import com.tym.idea.Util;
 import com.tym.idea.jni.InputManagerJni;
 import com.intellij.openapi.editor.EditorFactory;
@@ -11,10 +12,13 @@ import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.openapi.editor.event.EditorEventMulticaster;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
+import com.tym.ui.AppSettingsState;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 
 
 public class MyProjectManagerListener implements ProjectActivity, Disposable {
@@ -28,6 +32,27 @@ public class MyProjectManagerListener implements ProjectActivity, Disposable {
         eventMulticaster.addCaretListener((CaretListener) pfcCaretListener);
         eventMulticaster.addDocumentListener((DocumentListener) pfcCaretListener);
         InputManagerJni.getSingleton().any2English_1();
+
+
+        JFrame frame = WindowManager.getInstance().getFrame(project);
+        if (frame != null) {
+            frame.addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+                @Override
+                public void windowLostFocus(java.awt.event.WindowEvent e) {
+                    if(AppSettingsState.Companion.getInstance().getLanguage()== AppSettingsState.LanguageOption.CHINESE){
+                        InputManagerJni.getSingleton().any2Chinese_1();
+                    }else{
+                        InputManagerJni.getSingleton().any2Japanese_1();
+                    }
+                }
+
+                @Override
+                public void windowGainedFocus(java.awt.event.WindowEvent e) {
+                }
+            });
+        }
+
+
         return 1;
     }
 

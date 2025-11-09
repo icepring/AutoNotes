@@ -1,3 +1,7 @@
+## 1.0.4
+
+- [x] support un focus
+
 ## 1.0.3
 
 - [x] support japanese kannji
